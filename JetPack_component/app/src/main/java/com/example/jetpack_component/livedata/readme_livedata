@@ -1,0 +1,13 @@
+for implementing LiveData in our app
+
+1.  Is provided by the lifecycle dependency
+        implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+2.  You Need to convert your data like String, Int, Float or custom objects into MutableLiveData<T>
+        private lateinit var number: MutableLiveData<String>
+        value is set like : number.value = "some values"
+
+3.  Now We need to observe that value in our Activity
+        dataGenerator = ViewModelProviders.of(this).get(DataGenerator::class.java)
+        val mrandomNo=dataGenerator.getNumber()
+        mrandomNo.observe(this, Observer { randon_tv.text=it })    // this line is use for live data

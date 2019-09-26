@@ -1,0 +1,15 @@
+for implementing viewmodel in your project
+1.  the life cycle dependency is have the view model module.
+        implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+2.  create a new class which just extends ViewModel()
+        like :
+            class DataGenerator: ViewModel() {}
+
+3.  add following code in your onCreate method
+         dataGenerator = ViewModelProviders.of(this).get(DataGenerator::class.java)
+
+4.  using dataGenerator object to call/access the methods/variables.
+        like :
+            randon_tv.text = dataGenerator.getNumber() // it returns a String.
+

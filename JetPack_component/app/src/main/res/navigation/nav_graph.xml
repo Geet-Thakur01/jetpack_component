@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_graph" app:startDestination="@id/id_home">
+
+    <fragment android:id="@+id/id_home" android:name="com.example.jetpack_component.navigation.HomeFragment"
+              android:label="Home">
+        <action android:id="@+id/action_id_home_to_id_products" app:destination="@id/id_products"/>
+        <action android:id="@+id/action_id_home_to_id_contact_us" app:destination="@id/id_contact_us"/>
+    </fragment>
+    <fragment android:id="@+id/id_aboutus" android:name="com.example.jetpack_component.navigation.AboutUsFragment"
+              android:label="About Us"/>
+    <fragment android:id="@+id/id_contact_us" android:name="com.example.jetpack_component.navigation.ContactUsFragment"
+              android:label="Contact Us"/>
+    <fragment android:id="@+id/id_products" android:name="com.example.jetpack_component.navigation.ProductFragment"
+              android:label="Product">
+        <action android:id="@+id/action_id_products_to_id_aboutus" app:destination="@id/id_aboutus"/>
+    </fragment>
+</navigation>

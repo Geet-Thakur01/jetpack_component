@@ -1,0 +1,16 @@
+In the life cycle
+
+1. we need to ad dependency in app gradle file
+
+ implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
+2. make a class which is extends by LifecycleObserver and create a method with @OnLifecycleEvent
+
+     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+         fun onCreateCall() {
+         Log.e("TAG: activity on create event","Hiiii i am on pause")
+        }
+
+3. Add this observable class add in activity
+
+    lifecycle.addObserver(MainActivityLifeCycle())

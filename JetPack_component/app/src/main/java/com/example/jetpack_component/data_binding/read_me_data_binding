@@ -1,0 +1,35 @@
+In the data binding we create the some configuration like :
+
+1. Add data binding enable in app gradle and add new dependencies for this
+
+    dataBinding {
+        enabled = true
+    }
+
+    dependencies {
+    implementation 'android.arch.paging:runtime:1.0.1'
+    }
+
+
+2. Initialize data binding variable in your Activity.
+
+     binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+     /** bind with model and xmls **//
+
+     binding.product = Product("mobile","company samsung storage 64GB")
+     binding.eventhandler=EventHandlers(this)
+
+    <layout >
+        <data>
+            <variable name="product"
+                  type="com.example.pagingdemo.Product"/>
+            <variable name="eventhandler"
+                  type="com.example.pagingdemo.EventHandlers"/>
+        </data>
+
+        <TextView android:text="@{product.productName}"/>
+        <Button  android:onClick="@{()->eventhandler.onButtonClick()}"/>
+    </layout>
+
+
